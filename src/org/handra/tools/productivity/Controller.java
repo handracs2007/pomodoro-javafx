@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -62,7 +63,7 @@ public class Controller {
     }
 
     @FXML
-    private void startStopPomodoro ( ActionEvent event ) {
+    private void startStopPomodoro ( ActionEvent event ) throws Exception {
         if ( started ) {
             // Pomodoro is started. Let's stop it.
             this.resetPomodoro ( );
@@ -98,7 +99,7 @@ public class Controller {
                             stage.toFront ( );
 
                             // Play audio.
-                            String yooURI = "file://" + System.getProperty ( "user.dir" ) + File.separator + "yoo.ogg";
+                            String yooURI = Paths.get ( System.getProperty ( "user.dir" ) + File.separator + "yohoo.ogg" ).toUri ( ).toString ( );
                             Media media = new Media ( yooURI );
                             MediaPlayer mediaPlayer = new MediaPlayer ( media );
                             mediaPlayer.setAutoPlay ( true );
