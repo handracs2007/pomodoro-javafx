@@ -1,0 +1,1 @@
+pomodoro\bin\java -m pomodoro/org.handra.tools.productivity.Main

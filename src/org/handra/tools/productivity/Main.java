@@ -13,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start ( Stage primaryStage ) throws Exception {
-        URL fxmlUrl = new URL ( "file://" + System.getProperty ( "user.dir" ) + File.separator + "pomodoro.fxml" );
+        URL fxmlUrl = new File ( System.getProperty ( "user.dir" ) + File.separator + "pomodoro.fxml" ).toURI ( ).toURL ( );
         Parent root = FXMLLoader.load ( fxmlUrl );
 
         primaryStage.setTitle ( "Pomodoro" );
